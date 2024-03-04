@@ -1,0 +1,37 @@
+# Data for Class A and Class B
+class_A <- c(76, 35, 47, 64, 95, 66, 89, 36, 84)
+class_B <- c(51, 56, 84, 60, 59, 70, 63, 66, 50)
+
+# (i) Calculate mean, median, and range
+mean_A <- mean(class_A)
+mean_B <- mean(class_B)
+
+median_A <- median(class_A)
+median_B <- median(class_B)
+
+range_A <- max(class_A) - min(class_A)
+range_B <- max(class_B) - min(class_B)
+
+# Output mean, median, and range
+cat("Class A:\n")
+cat("Mean:", mean_A, "\n")
+cat("Median:", median_A, "\n")
+cat("Range:", range_A, "\n")
+
+cat("\nClass B:\n")
+cat("Mean:", mean_B, "\n")
+cat("Median:", median_B, "\n")
+cat("Range:", range_B, "\n")
+
+# (ii) Plot boxplot
+boxplot(class_A, class_B, 
+        main="Comparison of Year 9 Class Scores",
+        names=c("Class A", "Class B"),
+        col=c("lightblue", "lightgreen"),
+        ylab="Scores")
+
+# Inferences
+cat("\nInferences:\n")
+cat("1. Class B has a higher mean score compared to Class A.\n")
+cat("2. Class A has a higher median score compared to Class B.\n")
+cat("3. The range of scores in Class A is larger than in Class B, indicating more variability in scores.\n")
