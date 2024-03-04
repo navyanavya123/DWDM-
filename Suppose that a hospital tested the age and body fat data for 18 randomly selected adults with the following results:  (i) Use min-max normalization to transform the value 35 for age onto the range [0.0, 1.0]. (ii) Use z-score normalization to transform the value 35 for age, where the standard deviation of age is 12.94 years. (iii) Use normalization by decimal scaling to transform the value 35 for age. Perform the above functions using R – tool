@@ -1,0 +1,39 @@
+# Given data
+age_value <- 35
+sd_age <- 12.94
+
+# (i) Min-max normalization
+min_max <- function(x) {
+  (x - min(x)) / (max(x) - min(x))
+}
+
+min_max_normalized <- min_max(age_value)
+
+# Output min-max normalization result
+cat("Min-Max Normalization:\n")
+cat("Original Age Value:", age_value, "\n")
+cat("Normalized Age Value:", min_max_normalized, "\n\n")
+
+# (ii) Z-score normalization
+z_score <- function(x, sd) {
+  (x - mean(x)) / sd
+}
+
+z_score_normalized <- z_score(age_value, sd_age)
+
+# Output z-score normalization result
+cat("Z-Score Normalization:\n")
+cat("Original Age Value:", age_value, "\n")
+cat("Normalized Age Value:", z_score_normalized, "\n\n")
+
+# (iii) Normalization by decimal scaling
+decimal_scaling <- function(x) {
+  x / 10^ceiling(log10(max(abs(x))))
+}
+
+decimal_scaled <- decimal_scaling(age_value)
+
+# Output decimal scaling result
+cat("Normalization by Decimal Scaling:\n")
+cat("Original Age Value:", age_value, "\n")
+cat("Normalized Age Value:", decimal_scaled, "\n")
