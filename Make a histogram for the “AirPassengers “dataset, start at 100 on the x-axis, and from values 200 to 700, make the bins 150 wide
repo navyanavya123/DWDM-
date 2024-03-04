@@ -1,0 +1,5 @@
+# Load the AirPassengers dataset
+data("AirPassengers")
+
+# Create histogram
+hist(AirPassengers, xlim = c(100, 700), breaks = seq(100, 700, by = 150), xlab = "Passengers", main = "Histogram of Air Passengers")
