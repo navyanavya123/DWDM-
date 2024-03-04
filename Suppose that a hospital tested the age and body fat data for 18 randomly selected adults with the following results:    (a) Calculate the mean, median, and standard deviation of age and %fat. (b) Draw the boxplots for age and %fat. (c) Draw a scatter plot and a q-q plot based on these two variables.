@@ -1,0 +1,33 @@
+# Given data
+age <- c(23, 25, 33, 42, 51, 55, 56, 57, 61, 62, 67, 69, 70, 75, 77, 78, 79, 80)
+body_fat <- c(9.5, 26.5, 7.8, 17.8, 31.4, 25.9, 27.4, 30.2, 34.6, 42.5, 28.8, 33.8, 30, 35.2, 32.9, 41.2, 35.7, 30.9)
+
+# (a) Calculate mean, median, and standard deviation
+mean_age <- mean(age)
+median_age <- median(age)
+sd_age <- sd(age)
+
+mean_body_fat <- mean(body_fat)
+median_body_fat <- median(body_fat)
+sd_body_fat <- sd(body_fat)
+
+# Output the results
+cat("Age:\n")
+cat("Mean:", mean_age, "\n")
+cat("Median:", median_age, "\n")
+cat("Standard Deviation:", sd_age, "\n\n")
+
+cat("%Fat:\n")
+cat("Mean:", mean_body_fat, "\n")
+cat("Median:", median_body_fat, "\n")
+cat("Standard Deviation:", sd_body_fat, "\n\n")
+
+# (b) Draw boxplots
+par(mfrow=c(1,2))
+boxplot(age, main="Age", ylab="Age")
+boxplot(body_fat, main="%Fat", ylab="%Fat")
+
+# (c) Draw scatter plot and Q-Q plot
+par(mfrow=c(1,2))
+plot(age, body_fat, xlab="Age", ylab="%Fat", main="Scatter Plot")
+qqplot(age, body_fat, main="Q-Q Plot")
