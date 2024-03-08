@@ -1,0 +1,19 @@
+@relation items
+@attribute m{true,false} 
+@attribute beer{true,false}
+@attribute diaper{true,false}
+@attribute bread{true,false}
+@attribute butter{true,false}
+@attribute cookies{true,false}
+@data
+true true true false false false
+true false false true true false 
+true false true false false true
+false false false true true true
+false true true false false true
+true false true true true false
+false false true true true false
+false true true false false false
+true false true true true false
+false true false false false true
+
