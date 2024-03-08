@@ -1,0 +1,11 @@
+# Generate example data with some missing values
+points_scored <- c(60, 65, 70, 72, 75, NA, 78, 80, 85, 90, NA, 95, 100, 105, 110, 120)
+
+# Create a boxplot
+boxplot(points_scored,
+        col = "skyblue",
+        main = "Boxplot of Points Scored by Tennis Players",
+        ylab = "Points Scored")
+
+# Optionally, add points to highlight potential outliers
+points(jitter(rep(1, length(points_scored)), factor = 0.2), points_scored, col = "red", pch = 16)
