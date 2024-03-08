@@ -1,0 +1,17 @@
+# Data
+prices <- c(1, 1, 5, 5, 5, 5, 5, 8, 8, 10, 10, 10, 10, 12, 14, 14, 14, 15, 15, 15, 15, 15, 15, 18, 18, 18, 18, 18)
+
+# Equal-width partitioning with bin width of 3
+bin_width <- 3
+num_bins <- ceiling((max(prices) - min(prices)) / bin_width)
+bins <- cut(prices, breaks = seq(min(prices), max(prices) + bin_width, by = bin_width), include.lowest = TRUE, labels = FALSE)
+
+# Apply data smoothing using bin means
+bin_means <- tapply(prices, bins, mean)
+
+# Apply data smoothing using bin boundaries
+bin_boundaries <- tapply(prices, bins, function(x) c(min(x), max(x)))
+
+# Plot histogram
+hist(prices, breaks = seq(min(prices) - 0.5, max(prices) + 0.5, by = bin_width), xlab = "Prices", main = "Histogram of Prices", col = "skyblue", border = "black")
+abline(v = bin_boundaries, col = "red", lty = 2)
